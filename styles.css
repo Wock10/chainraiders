@@ -1,6 +1,7 @@
 :root {
   --void: #0a0c0a;
   --plate: #121512;
+  --ink: #1f3f13;
   --moss: #487233;
   --face: #b2ce5b;
   --mist: #eaf6b0;
@@ -63,7 +64,7 @@ button {
 .page {
   width: var(--art);
   margin: 0 auto;
-  padding: 40px 0 88px;
+  padding: 40px 0 0;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -227,34 +228,10 @@ button {
 
 .lower {
   position: relative;
-  isolation: isolate;
   display: flex;
   flex-direction: column;
   gap: 88px;
-  padding: 32px 0 24px;
-}
-
-.lower::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  z-index: 0;
-  transform: translateX(-50%);
-  background-color: var(--void);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%230a0c0a'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%231f3f13'/%3E%3Crect x='4' y='0' width='2' height='2' fill='%231f3f13'/%3E%3Crect x='2' y='4' width='2' height='2' fill='%23487233'/%3E%3Crect x='6' y='6' width='2' height='2' fill='%231f3f13'/%3E%3Crect x='0' y='6' width='2' height='2' fill='%23487233'/%3E%3C/svg%3E");
-  background-size: 24px 24px;
-  background-repeat: repeat;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 80px);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 80px);
-  pointer-events: none;
-}
-
-.lower > * {
-  position: relative;
-  z-index: 1;
+  padding: 32px 0 8px;
 }
 
 .facts {
@@ -319,21 +296,41 @@ button {
 }
 
 .foot {
+  width: 100vw;
+  margin: 48px 0 0;
+  margin-left: calc(50% - 50vw);
+}
+
+.ground {
+  height: 72px;
+  background-color: transparent;
+  background-image: url("ground.svg");
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: 144px 72px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.foot-bar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding-top: 32px;
+  gap: 12px;
+  padding: 18px 16px 28px;
+  background: var(--void);
+  border-top: 2px solid var(--ink);
 }
 
 .foot nav {
   display: flex;
-  gap: 22px;
+  gap: 28px;
   font-family: var(--pixel);
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--mist);
 }
 
 .foot nav a:hover {
@@ -342,9 +339,10 @@ button {
 
 .foot p {
   margin: 0;
-  font-size: 11px;
+  font-family: var(--pixel);
+  font-size: 12px;
   letter-spacing: 0.1em;
-  color: var(--moss);
+  color: var(--face);
 }
 
 @media (min-width: 748px) {
@@ -354,7 +352,7 @@ button {
   }
 
   .page {
-    padding: 64px 0 128px;
+    padding: 64px 0 0;
     gap: 88px;
   }
 
