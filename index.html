@@ -30,15 +30,19 @@
             src="art/01.png"
             width="350"
             height="350"
-            alt="CHAINRAIDERS teaser 01 / 48"
+            alt="CHAINRAIDERS teaser 01 / 50"
           />
+          <span class="flash" id="flash" aria-hidden="true"></span>
         </div>
         <figcaption class="step">
           <button type="button" id="prev">Prev</button>
-          <span id="counter">01 / 48</span>
+          <span class="status">
+            <span id="counter">01 / 50</span>
+            <button type="button" id="toggle">Pause</button>
+          </span>
           <button type="button" id="next">Next</button>
         </figcaption>
-        <p class="hint">Tap or use arrows to meet another</p>
+        <p class="hint">Arrows step · up / down a row · space pauses</p>
         <div class="strip" id="strip" aria-label="Teaser index"></div>
       </figure>
 

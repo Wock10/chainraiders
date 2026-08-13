@@ -117,6 +117,7 @@ button {
 }
 
 .plate {
+  position: relative;
   width: var(--art);
   height: var(--art);
   border: 1px solid var(--line);
@@ -131,6 +132,18 @@ button {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   cursor: pointer;
+}
+
+.flash {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: #ebfc86;
+  opacity: 0;
+}
+
+.plate.is-flash .flash {
+  opacity: 1;
 }
 
 .step {
@@ -148,6 +161,12 @@ button {
 
 .step button:hover {
   color: var(--edge);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .hint {
