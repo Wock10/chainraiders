@@ -19,7 +19,13 @@
         <h1>CHAINRAIDERS</h1>
         <p>Robinhood Chain</p>
       </div>
-      <a class="cta" href="#">View on OpenSea</a>
+      <nav class="links" aria-label="Collection links">
+        <a class="chip" href="#">OpenSea</a>
+        <a class="chip" href="#">Anvil</a>
+        <a class="chip" href="gallery.html">Gallery</a>
+        <a class="chip" href="https://x.com/chainraiders" target="_blank" rel="noopener noreferrer">X</a>
+        <a class="chip" href="https://discord.gg/ADfhP4g669" target="_blank" rel="noopener noreferrer">Discord</a>
+      </nav>
     </header>
 
     <main>
@@ -36,46 +42,29 @@
           <span class="flash" id="flash" aria-hidden="true"></span>
         </div>
         <div class="hud">
-          <div class="dirs">
-            <button type="button" class="pad" id="prev" aria-label="Previous">
-              <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">
-                <rect x="7" y="1" width="2" height="2" fill="currentColor"/>
-                <rect x="5" y="3" width="2" height="2" fill="currentColor"/>
-                <rect x="3" y="5" width="2" height="2" fill="currentColor"/>
-                <rect x="5" y="7" width="2" height="2" fill="currentColor"/>
-                <rect x="7" y="9" width="2" height="2" fill="currentColor"/>
-              </svg>
-            </button>
-            <button type="button" class="pad" id="up" aria-label="Jump up a row">
-              <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">
-                <rect x="5" y="2" width="2" height="2" fill="currentColor"/>
-                <rect x="3" y="4" width="2" height="2" fill="currentColor"/>
-                <rect x="7" y="4" width="2" height="2" fill="currentColor"/>
-                <rect x="1" y="6" width="2" height="2" fill="currentColor"/>
-                <rect x="9" y="6" width="2" height="2" fill="currentColor"/>
-              </svg>
-            </button>
-            <button type="button" class="pad" id="down" aria-label="Jump down a row">
-              <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">
-                <rect x="1" y="4" width="2" height="2" fill="currentColor"/>
-                <rect x="9" y="4" width="2" height="2" fill="currentColor"/>
-                <rect x="3" y="6" width="2" height="2" fill="currentColor"/>
-                <rect x="7" y="6" width="2" height="2" fill="currentColor"/>
-                <rect x="5" y="8" width="2" height="2" fill="currentColor"/>
-              </svg>
-            </button>
-            <button type="button" class="pad" id="next" aria-label="Next">
-              <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">
-                <rect x="3" y="1" width="2" height="2" fill="currentColor"/>
-                <rect x="5" y="3" width="2" height="2" fill="currentColor"/>
-                <rect x="7" y="5" width="2" height="2" fill="currentColor"/>
-                <rect x="5" y="7" width="2" height="2" fill="currentColor"/>
-                <rect x="3" y="9" width="2" height="2" fill="currentColor"/>
-              </svg>
-            </button>
-          </div>
+          <button type="button" class="pad prev" id="prev" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="8" y="1" width="2" height="2" fill="currentColor"/>
+              <rect x="6" y="3" width="2" height="2" fill="currentColor"/>
+              <rect x="4" y="5" width="2" height="2" fill="currentColor"/>
+              <rect x="2" y="7" width="2" height="2" fill="currentColor"/>
+              <rect x="4" y="9" width="2" height="2" fill="currentColor"/>
+              <rect x="6" y="11" width="2" height="2" fill="currentColor"/>
+              <rect x="8" y="13" width="2" height="2" fill="currentColor"/>
+            </svg>
+          </button>
           <span class="score" id="counter">01/50</span>
-          <button type="button" class="start" id="toggle">Start</button>
+          <button type="button" class="pad next" id="next" aria-label="Next">
+            <svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="6" y="1" width="2" height="2" fill="currentColor"/>
+              <rect x="8" y="3" width="2" height="2" fill="currentColor"/>
+              <rect x="10" y="5" width="2" height="2" fill="currentColor"/>
+              <rect x="12" y="7" width="2" height="2" fill="currentColor"/>
+              <rect x="10" y="9" width="2" height="2" fill="currentColor"/>
+              <rect x="8" y="11" width="2" height="2" fill="currentColor"/>
+              <rect x="6" y="13" width="2" height="2" fill="currentColor"/>
+            </svg>
+          </button>
         </div>
         <div class="strip" id="strip" aria-label="Teaser index"></div>
       </figure>
@@ -120,11 +109,6 @@
     <footer class="foot">
       <div class="ground" aria-hidden="true"></div>
       <div class="foot-bar">
-        <nav aria-label="Collection links">
-          <a class="chip" href="#">Anvil</a>
-          <a class="chip" href="https://x.com/chainraiders" target="_blank" rel="noopener noreferrer">X</a>
-          <a class="chip" href="https://discord.gg/ADfhP4g669" target="_blank" rel="noopener noreferrer">Discord</a>
-        </nav>
         <p>© CHAINRAIDERS</p>
       </div>
     </footer>

@@ -9,12 +9,8 @@
   const counter = document.getElementById("counter");
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
-  const toggle = document.getElementById("toggle");
   const strip = document.getElementById("strip");
-  const up = document.getElementById("up");
-  const down = document.getElementById("down");
   const led = document.getElementById("led");
-  const desktop = window.matchMedia("(min-width: 748px)");
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -33,10 +29,6 @@
     return `${String(i + 1).padStart(2, "0")}/${String(COUNT).padStart(2, "0")}`;
   }
 
-  function rowSize() {
-    return desktop.matches ? 10 : 5;
-  }
-
   function isPaused() {
     return hoverPaused || userPaused || reduceMotion;
   }
@@ -45,9 +37,7 @@
     teaser.src = fileFor(index);
     teaser.alt = `CHAINRAIDERS teaser ${labelFor(index)}`;
     counter.textContent = labelFor(index);
-    toggle.textContent = "Start";
-    toggle.classList.toggle("is-paused", userPaused);
-    if (led) led.classList.toggle("is-off", userPaused);
+    if (led) led.classList.toggle("is-off", isPaused());
     thumbs.forEach((btn, i) => {
       btn.classList.toggle("is-on", i === index);
     });
@@ -111,30 +101,19 @@
     go(1);
     startTimer();
   });
-  up.addEventListener("click", () => {
-    go(-rowSize());
-    startTimer();
-  });
-  down.addEventListener("click", () => {
-    go(rowSize());
-    startTimer();
-  });
   teaser.addEventListener("click", () => {
     go(1);
-    startTimer();
-  });
-  toggle.addEventListener("click", () => {
-    userPaused = !userPaused;
-    render();
     startTimer();
   });
 
   hero.addEventListener("mouseenter", () => {
     hoverPaused = true;
+    render();
     startTimer();
   });
   hero.addEventListener("mouseleave", () => {
     hoverPaused = false;
+    render();
     startTimer();
   });
 
@@ -147,15 +126,7 @@
       event.preventDefault();
       go(-1);
       startTimer();
-    } else if (event.key === "ArrowDown") {
-      event.preventDefault();
-      go(rowSize());
-      startTimer();
-    } else if (event.key === "ArrowUp") {
-      event.preventDefault();
-      go(-rowSize());
-      startTimer();
-    } else if (event.key === " ") {
+    } else if (event.key === " " && !event.target.closest("button, a")) {
       event.preventDefault();
       userPaused = !userPaused;
       render();

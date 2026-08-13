@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0A0C0A" />
+  <meta name="description" content="CHAINRAIDERS gallery. Opens after launch." />
+  <title>Gallery · CHAINRAIDERS</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body class="is-sealed">
+  <header class="bar">
+    <a class="brand" href="./">CHAINRAIDERS</a>
+    <p class="lock-note" id="lock-note">Opens after launch</p>
+    <span class="status" id="status"></span>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="side-head">
+        <h2>Filters</h2>
+        <input type="search" id="tsearch" placeholder="Search" autocomplete="off" />
+        <button type="button" class="text-btn" id="clear">Clear</button>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div id="layers"></div>
+    </aside>
+    <div class="main" id="main">
+      <div class="grid" id="grid"></div>
+    </div>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
