@@ -25,6 +25,7 @@
     <main>
       <figure class="hero" id="hero">
         <div class="plate">
+          <span class="led" id="led" aria-hidden="true"></span>
           <img
             id="teaser"
             src="art/01.png"
@@ -34,15 +35,48 @@
           />
           <span class="flash" id="flash" aria-hidden="true"></span>
         </div>
-        <figcaption class="step">
-          <button type="button" id="prev">Prev</button>
-          <span class="status">
-            <span id="counter">01 / 50</span>
-            <button type="button" id="toggle">Pause</button>
-          </span>
-          <button type="button" id="next">Next</button>
-        </figcaption>
-        <p class="hint">Use arrows to step. Up or down jumps a row. Space pauses.</p>
+        <div class="hud">
+          <div class="dirs">
+            <button type="button" class="pad" id="prev" aria-label="Previous">
+              <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="7" y="1" width="2" height="2" fill="currentColor"/>
+                <rect x="5" y="3" width="2" height="2" fill="currentColor"/>
+                <rect x="3" y="5" width="2" height="2" fill="currentColor"/>
+                <rect x="5" y="7" width="2" height="2" fill="currentColor"/>
+                <rect x="7" y="9" width="2" height="2" fill="currentColor"/>
+              </svg>
+            </button>
+            <button type="button" class="pad" id="up" aria-label="Jump up a row">
+              <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="5" y="2" width="2" height="2" fill="currentColor"/>
+                <rect x="3" y="4" width="2" height="2" fill="currentColor"/>
+                <rect x="7" y="4" width="2" height="2" fill="currentColor"/>
+                <rect x="1" y="6" width="2" height="2" fill="currentColor"/>
+                <rect x="9" y="6" width="2" height="2" fill="currentColor"/>
+              </svg>
+            </button>
+            <button type="button" class="pad" id="down" aria-label="Jump down a row">
+              <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="1" y="4" width="2" height="2" fill="currentColor"/>
+                <rect x="9" y="4" width="2" height="2" fill="currentColor"/>
+                <rect x="3" y="6" width="2" height="2" fill="currentColor"/>
+                <rect x="7" y="6" width="2" height="2" fill="currentColor"/>
+                <rect x="5" y="8" width="2" height="2" fill="currentColor"/>
+              </svg>
+            </button>
+            <button type="button" class="pad" id="next" aria-label="Next">
+              <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">
+                <rect x="3" y="1" width="2" height="2" fill="currentColor"/>
+                <rect x="5" y="3" width="2" height="2" fill="currentColor"/>
+                <rect x="7" y="5" width="2" height="2" fill="currentColor"/>
+                <rect x="5" y="7" width="2" height="2" fill="currentColor"/>
+                <rect x="3" y="9" width="2" height="2" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+          <span class="score" id="counter">01/50</span>
+          <button type="button" class="start" id="toggle">Start</button>
+        </div>
         <div class="strip" id="strip" aria-label="Teaser index"></div>
       </figure>
 
@@ -87,9 +121,9 @@
       <div class="ground" aria-hidden="true"></div>
       <div class="foot-bar">
         <nav aria-label="Collection links">
-          <a href="#">Anvil</a>
-          <a href="#">X</a>
-          <a href="#">Discord</a>
+          <a class="chip" href="#">Anvil</a>
+          <a class="chip" href="#">X</a>
+          <a class="chip" href="#">Discord</a>
         </nav>
         <p>© CHAINRAIDERS</p>
       </div>

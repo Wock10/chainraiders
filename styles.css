@@ -139,9 +139,28 @@ button {
   position: relative;
   width: var(--art);
   height: var(--art);
-  border: 2px solid var(--moss);
+  border: 4px solid var(--ink);
+  outline: 2px solid var(--moss);
+  outline-offset: 0;
   background: var(--plate);
   overflow: hidden;
+  box-shadow: inset 0 0 0 2px var(--void);
+}
+
+.led {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  width: 6px;
+  height: 6px;
+  background: var(--edge);
+  box-shadow: 0 0 0 2px var(--ink);
+  pointer-events: none;
+}
+
+.led.is-off {
+  background: var(--moss);
 }
 
 .plate img {
@@ -164,42 +183,111 @@ button {
   opacity: 1;
 }
 
-.step {
+.hud {
   width: var(--art);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0 0;
-  font-family: var(--pixel);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--face);
+  gap: 12px;
+  margin: 16px 0 0;
 }
 
-.step button:hover {
+.dirs {
+  display: flex;
+  gap: 6px;
+}
+
+.pad,
+.start,
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ink);
+  background: var(--moss);
+  color: var(--screen);
+  clip-path: polygon(
+    3px 0,
+    calc(100% - 3px) 0,
+    100% 3px,
+    100% calc(100% - 3px),
+    calc(100% - 3px) 100%,
+    3px 100%,
+    0 calc(100% - 3px),
+    0 3px
+  );
+}
+
+.pad {
+  width: 32px;
+  height: 32px;
+  color: var(--screen);
+}
+
+.pad:hover,
+.start:hover,
+.chip:hover {
+  background: var(--ink);
   color: var(--edge);
 }
 
-.status {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.pad:active,
+.start:active,
+.chip:active {
+  transform: translateY(2px);
 }
 
-.hint {
-  margin: 16px 0 0;
-  font-size: 14px;
+.start,
+.chip {
+  font-family: var(--pixel);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--screen);
+}
+
+.start {
+  min-height: 32px;
+  padding: 0 12px;
+}
+
+.start.is-paused {
+  background: var(--ink);
   color: var(--face);
+}
+
+.score {
+  font-family: var(--pixel);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--screen);
+  background: var(--ink);
+  padding: 6px 10px 4px;
+  clip-path: polygon(
+    3px 0,
+    calc(100% - 3px) 0,
+    100% 3px,
+    100% calc(100% - 3px),
+    calc(100% - 3px) 100%,
+    3px 100%,
+    0 calc(100% - 3px),
+    0 3px
+  );
+}
+
+.chip {
+  min-height: 32px;
+  padding: 0 12px;
 }
 
 .strip {
   display: grid;
   grid-template-columns: repeat(var(--cols), var(--thumb));
   width: var(--art);
-  margin: 32px 0 0;
-  border: 2px solid var(--moss);
+  margin: 20px 0 0;
+  border: 2px solid var(--ink);
+  outline: 2px solid var(--moss);
 }
 
 .strip button {
@@ -241,10 +329,11 @@ button {
   gap: 10px 0;
   width: 100%;
   margin: 0;
-  padding: 28px 0;
+  padding: 16px 12px;
   list-style: none;
-  border-top: 2px solid var(--moss);
-  border-bottom: 2px solid var(--moss);
+  background: var(--ink);
+  color: var(--screen);
+  border: 2px solid var(--moss);
 }
 
 .facts li {
@@ -253,7 +342,7 @@ button {
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--face);
+  color: var(--screen);
 }
 
 .facts li + li::before {
@@ -324,17 +413,7 @@ button {
 
 .foot nav {
   display: flex;
-  gap: 28px;
-  font-family: var(--pixel);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--mist);
-}
-
-.foot nav a:hover {
-  color: var(--edge);
+  gap: 10px;
 }
 
 .foot p {

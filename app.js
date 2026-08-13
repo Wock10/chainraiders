@@ -11,6 +11,9 @@
   const next = document.getElementById("next");
   const toggle = document.getElementById("toggle");
   const strip = document.getElementById("strip");
+  const up = document.getElementById("up");
+  const down = document.getElementById("down");
+  const led = document.getElementById("led");
   const desktop = window.matchMedia("(min-width: 748px)");
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -27,7 +30,7 @@
   }
 
   function labelFor(i) {
-    return `${String(i + 1).padStart(2, "0")} / ${String(COUNT).padStart(2, "0")}`;
+    return `${String(i + 1).padStart(2, "0")}/${String(COUNT).padStart(2, "0")}`;
   }
 
   function rowSize() {
@@ -42,7 +45,9 @@
     teaser.src = fileFor(index);
     teaser.alt = `CHAINRAIDERS teaser ${labelFor(index)}`;
     counter.textContent = labelFor(index);
-    toggle.textContent = userPaused ? "Play" : "Pause";
+    toggle.textContent = "Start";
+    toggle.classList.toggle("is-paused", userPaused);
+    if (led) led.classList.toggle("is-off", userPaused);
     thumbs.forEach((btn, i) => {
       btn.classList.toggle("is-on", i === index);
     });
@@ -104,6 +109,14 @@
   });
   next.addEventListener("click", () => {
     go(1);
+    startTimer();
+  });
+  up.addEventListener("click", () => {
+    go(-rowSize());
+    startTimer();
+  });
+  down.addEventListener("click", () => {
+    go(rowSize());
     startTimer();
   });
   teaser.addEventListener("click", () => {
