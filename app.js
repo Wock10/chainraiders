@@ -1,6 +1,6 @@
 (() => {
   const COUNT = 50;
-  const INTERVAL_MS = 1500;
+  const INTERVAL_MS = 900;
   const FLASH_MS = 70;
 
   const teaser = document.getElementById("teaser");

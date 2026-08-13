@@ -129,7 +129,7 @@ button {
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .hero {
@@ -237,12 +237,12 @@ button {
 
 .chip {
   font-family: var(--pixel);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0 12px;
-  min-width: 80px;
+  padding: 0 10px;
+  white-space: nowrap;
 }
 
 .score {
@@ -416,14 +416,17 @@ button {
     gap: 40px;
   }
 
-  .mast {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .brand h1 {
     font-size: 20px;
+  }
+
+  .links {
+    gap: 8px;
+  }
+
+  .chip {
+    font-size: 12px;
+    padding: 0 12px;
   }
 
   .hud {
@@ -469,6 +472,13 @@ button {
     gap: 48px;
   }
 
+  .mast {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
   .brand h1 {
     font-size: 28px;
   }
@@ -477,10 +487,14 @@ button {
     font-size: 14px;
   }
 
+  .links {
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  }
+
   .chip {
-    font-size: 14px;
-    min-width: 96px;
-    padding: 0 16px;
+    font-size: 13px;
+    padding: 0 14px;
   }
 
   .score {
@@ -555,8 +569,8 @@ button {
   }
 
   .chip {
-    font-size: 16px;
-    min-width: 112px;
+    font-size: 14px;
+    padding: 0 16px;
   }
 
   .score {
