@@ -187,8 +187,8 @@ button {
 }
 
 .hint {
-  margin: 10px 0 0;
-  font-size: 13px;
+  margin: 16px 0 0;
+  font-size: 14px;
   color: var(--face);
 }
 
@@ -267,7 +267,7 @@ button {
 .facts li {
   font-family: var(--pixel);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--face);
