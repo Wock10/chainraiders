@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0C1609" />
+  <meta name="description" content="CHAINRAIDERS — pixel art on Robinhood Chain. 5,000 raiders, Anvil AMM, 100% royalties." />
+  <title>CHAINRAIDERS</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="mast">
+      <h1 class="wordmark">CHAINRAIDERS</h1>
+      <p class="chain">Robinhood Chain</p>
+    </header>
+
+    <main>
+      <div class="handheld" id="handheld">
+        <div class="shell">
+          <div class="lcd-deck">
+            <span class="led" id="led" aria-hidden="true"></span>
+            <div class="bezel">
+              <div class="lcd">
+                <img id="teaser" src="art/01.png" width="350" height="350" alt="CHAINRAIDERS teaser" />
+                <div class="scan" aria-hidden="true"></div>
+              </div>
+            </div>
+            <p class="counter" id="counter">01 / 24</p>
+          </div>
+
+          <p class="emboss">CHAINRAIDERS</p>
+
+          <div class="controls">
+            <div class="dpad" role="group" aria-label="D-pad">
+              <span class="arm up" aria-hidden="true"></span>
+              <button type="button" class="arm left" id="pad-left" aria-label="Previous teaser"></button>
+              <button type="button" class="arm right" id="pad-right" aria-label="Next teaser"></button>
+              <span class="arm down" aria-hidden="true"></span>
+              <span class="nub" aria-hidden="true"></span>
+            </div>
+            <div class="ab">
+              <button type="button" class="round b" id="btn-b" aria-label="Previous teaser">B</button>
+              <button type="button" class="round a" id="btn-a" aria-label="Next teaser">A</button>
+            </div>
+          </div>
+
+          <div class="ss">
+            <button type="button" class="pill-ss" id="btn-select">SELECT</button>
+            <button type="button" class="pill-ss" id="btn-start">START</button>
+          </div>
+
+          <div class="speaker" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <p class="manifesto">
+        The best pixel art collection on Robinhood using Anvil AMM paired with 100% of all NFT royalties.
+      </p>
+
+      <ul class="stats">
+        <li>5,000 raiders</li>
+        <li>Anvil AMM</li>
+        <li>100% royalties</li>
+      </ul>
+
+      <nav class="links" aria-label="Collection links">
+        <a class="cta fill" href="#">OpenSea</a>
+        <a class="cta ghost" href="#">Anvil</a>
+        <a class="cta ghost" href="#">X</a>
+        <a class="cta ghost" href="#">Discord</a>
+      </nav>
+    </main>
+
+    <footer class="foot">
+      <span>© CHAINRAIDERS</span>
+      <span>5,000 raiders</span>
+      <span>100% royalties</span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
