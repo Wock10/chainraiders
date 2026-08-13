@@ -299,11 +299,11 @@ button {
 
 .block h2 {
   margin: 0 auto 18px;
-  max-width: 18ch;
+  max-width: 22ch;
   font-family: var(--pixel);
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: 0.02em;
 }
 
@@ -313,11 +313,6 @@ button {
   font-size: 15px;
   line-height: 1.75;
   color: var(--mist);
-}
-
-.block strong {
-  font-weight: 500;
-  color: var(--edge);
 }
 
 .foot {
