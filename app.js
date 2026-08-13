@@ -1,24 +1,18 @@
 (() => {
   const COUNT = 24;
-  const INTERVAL_MS = 3000;
+  const INTERVAL_MS = 4000;
 
   const teaser = document.getElementById("teaser");
+  const hero = document.getElementById("hero");
   const counter = document.getElementById("counter");
-  const handheld = document.getElementById("handheld");
-  const led = document.getElementById("led");
-  const btnA = document.getElementById("btn-a");
-  const btnB = document.getElementById("btn-b");
-  const padLeft = document.getElementById("pad-left");
-  const padRight = document.getElementById("pad-right");
-  const btnSelect = document.getElementById("btn-select");
-  const btnStart = document.getElementById("btn-start");
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let index = 0;
   let timer = null;
-  let userPaused = reduceMotion;
-  let hoverPaused = false;
+  let paused = reduceMotion;
 
   function fileFor(i) {
     return `art/${String(i + 1).padStart(2, "0")}.png`;
@@ -32,8 +26,6 @@
     teaser.src = fileFor(index);
     teaser.alt = `CHAINRAIDERS teaser ${labelFor(index)}`;
     counter.textContent = labelFor(index);
-    handheld.classList.toggle("is-paused", userPaused || hoverPaused);
-    if (led) led.classList.toggle("is-paused", userPaused);
   }
 
   function go(delta) {
@@ -50,76 +42,47 @@
 
   function startTimer() {
     stopTimer();
-    if (userPaused || hoverPaused || reduceMotion) return;
+    if (paused || reduceMotion) return;
     timer = window.setInterval(() => go(1), INTERVAL_MS);
   }
 
-  function pause() {
-    userPaused = true;
-    startTimer();
-    render();
-  }
-
-  function play() {
-    userPaused = false;
-    startTimer();
-    render();
-  }
-
-  function togglePause() {
-    if (userPaused) play();
-    else pause();
-  }
-
-  btnA.addEventListener("click", () => {
-    go(1);
-    pause();
-  });
-  btnB.addEventListener("click", () => {
+  prev.addEventListener("click", () => {
     go(-1);
-    pause();
+    startTimer();
   });
-  padRight.addEventListener("click", () => {
+  next.addEventListener("click", () => {
     go(1);
-    pause();
+    startTimer();
   });
-  padLeft.addEventListener("click", () => {
-    go(-1);
-    pause();
+  teaser.addEventListener("click", () => {
+    go(1);
+    startTimer();
   });
-  btnSelect.addEventListener("click", pause);
-  btnStart.addEventListener("click", play);
 
-  handheld.addEventListener("mouseenter", () => {
-    hoverPaused = true;
+  hero.addEventListener("mouseenter", () => {
+    paused = true;
     startTimer();
-    render();
   });
-  handheld.addEventListener("mouseleave", () => {
-    hoverPaused = false;
+  hero.addEventListener("mouseleave", () => {
+    paused = reduceMotion;
     startTimer();
-    render();
   });
-  teaser.addEventListener("click", togglePause);
 
   window.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight" || event.key === "a" || event.key === "A") {
+    if (event.key === "ArrowRight") {
       event.preventDefault();
       go(1);
-      pause();
-    } else if (event.key === "ArrowLeft" || event.key === "b" || event.key === "B") {
+      startTimer();
+    } else if (event.key === "ArrowLeft") {
       event.preventDefault();
       go(-1);
-      pause();
-    } else if (event.key === " ") {
-      event.preventDefault();
-      togglePause();
+      startTimer();
     }
   });
 
-  for (let i = 2; i <= COUNT; i += 1) {
+  for (let i = 0; i < COUNT; i += 1) {
     const preload = new Image();
-    preload.src = fileFor(i - 1);
+    preload.src = fileFor(i);
   }
 
   render();
