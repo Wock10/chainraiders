@@ -396,7 +396,7 @@ button {
 
 @media (min-width: 374px) {
   :root {
-    --art: 350px;
+    --art: min(350px, calc(100vw - 24px));
     --thumb: 70px;
     --gap: 6px;
   }
@@ -404,15 +404,16 @@ button {
 
 @media (min-width: 748px) {
   :root {
-    --art: 700px;
+    /* Mast + hud + a strip peek stay in view so the page invites a scroll. */
+    --art: min(700px, calc(100vw - 64px), calc(100vh - 280px));
     --thumb: 70px;
     --cols: 10;
     --gap: 8px;
   }
 
   .page {
-    padding: 64px 0 0;
-    gap: 88px;
+    padding: 48px 0 0;
+    gap: 40px;
   }
 
   .mast {
@@ -423,6 +424,14 @@ button {
 
   .brand h1 {
     font-size: 20px;
+  }
+
+  .hud {
+    margin: 20px 0 0;
+  }
+
+  .strip {
+    margin: 20px auto 0;
   }
 
   .lower {
@@ -445,8 +454,7 @@ button {
 
 @media (min-width: 1120px) {
   :root {
-    --art: 1050px;
-    --thumb: 105px;
+    --art: min(960px, calc(100vw - 96px), calc(100vh - 300px));
     --bezel: 6px;
     --control: 40px;
     --gap: 10px;
@@ -457,8 +465,8 @@ button {
   }
 
   .page {
-    padding: 80px 0 0;
-    gap: 112px;
+    padding: 56px 0 0;
+    gap: 48px;
   }
 
   .brand h1 {
@@ -482,11 +490,11 @@ button {
 
   .hud {
     gap: 10px;
-    margin: 28px 0 0;
+    margin: 24px 0 0;
   }
 
   .strip {
-    margin: 28px auto 0;
+    margin: 24px auto 0;
   }
 
   .lower {
@@ -527,8 +535,7 @@ button {
 
 @media (min-width: 1480px) {
   :root {
-    --art: 1400px;
-    --thumb: 140px;
+    --art: min(1100px, calc(100vw - 120px), calc(100vh - 320px));
     --bezel: 8px;
     --control: 48px;
     --gap: 12px;
@@ -539,8 +546,8 @@ button {
   }
 
   .page {
-    padding: 96px 0 0;
-    gap: 128px;
+    padding: 64px 0 0;
+    gap: 56px;
   }
 
   .brand h1 {
