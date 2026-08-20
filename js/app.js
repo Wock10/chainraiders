@@ -619,7 +619,7 @@ function showTab(name, push = true) {
     panel.classList.toggle("is-on", panel.dataset.panel === tab);
   });
   if (push) {
-    const next = new URL(pageUrl("app.html", tab === "trade" ? "" : tab), location.href);
+    const next = new URL(pageUrl("market", tab === "trade" ? "" : tab), location.href);
     if (`${location.pathname}${location.hash}` !== `${next.pathname}${next.hash}`) {
       history.replaceState({ view: "market", tab, hash: next.hash.replace(/^#/, "") }, "", next);
     }

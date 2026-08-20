@@ -31,11 +31,23 @@ export function pageUrl(file, hash = "") {
   return hash ? `${path}#${hash}` : path;
 }
 
+function pathFile() {
+  return location.pathname.replace(/\/+$/, "").split("/").pop() || "";
+}
+
+function isGalleryPath(file) {
+  return file === "gallery.html" || file === "gallery";
+}
+
+function isMarketPath(file) {
+  return file === "app.html" || file === "app" || file === "market";
+}
+
 export function readRoute() {
-  const file = location.pathname.split("/").pop() || "index.html";
+  const file = pathFile();
   const hash = location.hash.replace(/^#/, "");
-  if (file === "gallery.html") return { view: "gallery", hash, tab: "" };
-  if (file === "app.html") {
+  if (isGalleryPath(file)) return { view: "gallery", hash, tab: "" };
+  if (isMarketPath(file)) {
     const tab = TABS.includes(hash) ? hash : "trade";
     return { view: "market", hash, tab };
   }
@@ -43,8 +55,8 @@ export function readRoute() {
 }
 
 export function routeUrl(view, { tab, hash } = {}) {
-  if (view === "market") return pageUrl("app.html", tab && tab !== "trade" ? tab : "");
-  if (view === "gallery") return pageUrl("gallery.html", hash || "");
+  if (view === "market") return pageUrl("market", tab && tab !== "trade" ? tab : "");
+  if (view === "gallery") return pageUrl("gallery", hash || "");
   return pageUrl("");
 }
 
@@ -85,9 +97,9 @@ export function applyChrome(view) {
   document.querySelectorAll(".site-nav a").forEach((a) => {
     const href = a.getAttribute("href") || "";
     const on =
-      (view === "home" && (href === "./" || href === "index.html")) ||
-      (view === "market" && href.startsWith("app.html")) ||
-      (view === "gallery" && href.startsWith("gallery.html"));
+      (view === "home" && (href === "./" || href === "index.html" || href === "/")) ||
+      (view === "market" && (href.startsWith("market") || href.startsWith("app.html"))) ||
+      (view === "gallery" && (href.startsWith("gallery") || href.startsWith("gallery.html")));
     a.classList.toggle("is-on", on);
     if (on) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
@@ -102,17 +114,25 @@ export function isInternalHref(href) {
     return false;
   }
   if (url.origin !== location.origin) return false;
-  const file = url.pathname.split("/").pop() || "";
+  const file = url.pathname.replace(/\/+$/, "").split("/").pop() || "";
   if (url.pathname === dirPath() || url.pathname === `${dirPath()}index.html`) return true;
-  return file === "" || file === "index.html" || file === "app.html" || file === "gallery.html";
+  return (
+    file === "" ||
+    file === "index.html" ||
+    file === "app.html" ||
+    file === "gallery.html" ||
+    file === "market" ||
+    file === "gallery" ||
+    file === "app"
+  );
 }
 
 export function routeFromHref(href) {
   const url = new URL(href, location.href);
-  const file = url.pathname.split("/").pop() || "index.html";
+  const file = url.pathname.replace(/\/+$/, "").split("/").pop() || "index.html";
   const hash = url.hash.replace(/^#/, "");
-  if (file === "gallery.html") return { view: "gallery", hash, tab: "" };
-  if (file === "app.html") {
+  if (isGalleryPath(file)) return { view: "gallery", hash, tab: "" };
+  if (isMarketPath(file)) {
     const tab = TABS.includes(hash) ? hash : "trade";
     return { view: "market", hash, tab };
   }

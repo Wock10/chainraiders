@@ -218,7 +218,7 @@ function toggleVal(layer, value) {
 
 function writeHash() {
   const hash = poolOn() ? (buyId ? `pool/${buyId}` : "pool") : "";
-  const next = new URL(pageUrl("gallery.html", hash), location.href);
+  const next = new URL(pageUrl("gallery", hash), location.href);
   if (`${location.pathname}${location.hash}` !== `${next.pathname}${next.hash}`) {
     history.replaceState({ view: "gallery", hash }, "", next);
   }

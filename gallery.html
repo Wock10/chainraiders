@@ -4,8 +4,13 @@
   <meta charset="utf-8" />
   <script>
     (() => {
-      const file = location.pathname.split("/").pop() || "index.html";
-      const view = file === "gallery.html" ? "is-gallery" : file === "app.html" ? "is-app" : "is-home";
+      const file = location.pathname.replace(/\/+$/, "").split("/").pop() || "";
+      const view =
+        file === "gallery.html" || file === "gallery"
+          ? "is-gallery"
+          : file === "app.html" || file === "app" || file === "market"
+            ? "is-app"
+            : "is-home";
       document.documentElement.classList.add(view);
     })();
   </script>
@@ -29,8 +34,8 @@
       <a class="logo" href="./">CHAINRAIDERS</a>
       <nav class="site-nav" aria-label="Site">
         <a href="./" aria-current="page">Home</a>
-        <a href="app.html">Market</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="market">Market</a>
+        <a href="gallery">Gallery</a>
       </nav>
       <nav class="offsite-nav" aria-label="Elsewhere">
         <a href="https://opensea.io/collection/chainraiders" target="_blank" rel="noopener noreferrer">OpenSea</a>
@@ -118,7 +123,7 @@
             You burn RAID for weight. Transfer voids the share.
             You claim when you want.
           </p>
-          <p><a href="app.html#stake">Activate on the market</a></p>
+          <p><a href="market#stake">Activate on the market</a></p>
         </section>
       </div>
     </div>
