@@ -2,117 +2,512 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <script>
+    (() => {
+      const file = location.pathname.split("/").pop() || "index.html";
+      const view = file === "gallery.html" ? "is-gallery" : file === "app.html" ? "is-app" : "is-home";
+      document.documentElement.classList.add(view);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0A0C0A" />
-  <meta name="description" content="CHAINRAIDERS — hand-drawn pixel art on Robinhood Chain. 5,000 raiders. 1,250 in Anvil. All royalties to Anvil." />
+  <meta name="theme-color" content="#0B0C0B" />
+  <meta name="description" content="CHAINRAIDERS. 5,000 minted-out pixel raiders on Robinhood Chain. Active AMM pool. Royalties buy RAID." />
   <title>CHAINRAIDERS</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Silkscreen:wght@700&display=optional" rel="stylesheet" />
+  <link rel="preload" href="art/01.png" as="image" />
+  <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="gallery.css" />
 </head>
 <body>
-  <div class="page">
-    <header class="mast">
-      <div class="brand">
-        <h1>CHAINRAIDERS</h1>
-        <p>Robinhood Chain</p>
-      </div>
-      <nav class="links" aria-label="Collection links">
-        <a class="chip" href="https://opensea.io/collection/chainraiders" target="_blank" rel="noopener noreferrer">OpenSea</a>
-        <a class="chip" href="#">Anvil</a>
-        <a class="chip" href="gallery.html">Gallery</a>
-        <a class="chip" href="https://x.com/chainraiders" target="_blank" rel="noopener noreferrer">X</a>
-        <a class="chip" href="https://discord.gg/ADfhP4g669" target="_blank" rel="noopener noreferrer">Discord</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="./">CHAINRAIDERS</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="./" aria-current="page">Home</a>
+        <a href="app.html">Market</a>
+        <a href="gallery.html">Gallery</a>
       </nav>
-    </header>
-
-    <main>
-      <figure class="hero" id="hero">
-        <div class="plate">
-          <span class="led" id="led" aria-hidden="true"></span>
-          <img
-            id="teaser"
-            src="art/01.png"
-            width="350"
-            height="350"
-            alt="CHAINRAIDERS teaser 01 / 50"
-          />
-          <span class="flash" id="flash" aria-hidden="true"></span>
-        </div>
-        <div class="hud">
-          <button type="button" class="pad prev" id="prev" aria-label="Previous">
-            <svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
-              <rect x="8" y="1" width="2" height="2" fill="currentColor"/>
-              <rect x="6" y="3" width="2" height="2" fill="currentColor"/>
-              <rect x="4" y="5" width="2" height="2" fill="currentColor"/>
-              <rect x="2" y="7" width="2" height="2" fill="currentColor"/>
-              <rect x="4" y="9" width="2" height="2" fill="currentColor"/>
-              <rect x="6" y="11" width="2" height="2" fill="currentColor"/>
-              <rect x="8" y="13" width="2" height="2" fill="currentColor"/>
-            </svg>
-          </button>
-          <span class="score" id="counter">01/50</span>
-          <button type="button" class="pad next" id="next" aria-label="Next">
-            <svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
-              <rect x="6" y="1" width="2" height="2" fill="currentColor"/>
-              <rect x="8" y="3" width="2" height="2" fill="currentColor"/>
-              <rect x="10" y="5" width="2" height="2" fill="currentColor"/>
-              <rect x="12" y="7" width="2" height="2" fill="currentColor"/>
-              <rect x="10" y="9" width="2" height="2" fill="currentColor"/>
-              <rect x="8" y="11" width="2" height="2" fill="currentColor"/>
-              <rect x="6" y="13" width="2" height="2" fill="currentColor"/>
-            </svg>
-          </button>
-        </div>
-        <div class="strip" id="strip" aria-label="Teaser index"></div>
-      </figure>
-
-      <div class="lower">
-        <ul class="facts">
-          <li>5,000 raiders</li>
-          <li>1,250 in Anvil</li>
-          <li>All Royalties to Anvil</li>
-          <li>Robinhood Chain</li>
-        </ul>
-
-        <section class="block">
-          <p class="kicker">01 / Collection</p>
-          <h2>5,000 raiders on Robinhood Chain</h2>
-          <p>
-            CHAINRAIDERS is hand-drawn pixel art. Each raider is built from DNA,
-            head, body, face, and background. The set is 5,000.
-          </p>
-        </section>
-
-        <section class="block">
-          <p class="kicker">02 / Anvil</p>
-          <h2>1,250 go into Anvil</h2>
-          <p>
-            Anvil is the AMM on Robinhood Chain. 1,250 raiders go into that pool
-            so people can buy and sell against it.
-          </p>
-        </section>
-
-        <section class="block">
-          <p class="kicker">03 / Royalties</p>
-          <h2>All royalties to Anvil</h2>
-          <p>
-            Secondary royalties go back into the Anvil pool. They don't hit a
-            team wallet.
-          </p>
-        </section>
+      <nav class="offsite-nav" aria-label="Elsewhere">
+        <a href="https://opensea.io/collection/chainraiders" target="_blank" rel="noopener noreferrer">OpenSea</a>
+        <a href="https://x.com/chainraiders" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://discord.gg/ADfhP4g669" target="_blank" rel="noopener noreferrer">Discord</a>
+      </nav>
+      <div class="end">
+        <span class="live" id="feed-status">Loading</span>
+        <button type="button" class="btn btn-primary" id="connect">Connect wallet</button>
       </div>
-    </main>
+    </div>
+  </header>
 
-    <footer class="foot">
-      <div class="ground" aria-hidden="true"></div>
-      <div class="foot-bar">
-        <p>© CHAINRAIDERS</p>
-      </div>
-    </footer>
+  <div class="desk-bar">
+    <div class="wrap">
+      <nav class="desk-tabs" aria-label="Anvil desk">
+        <button type="button" class="is-on" data-tab="trade">Swap</button>
+        <button type="button" data-tab="snipe">Snipe</button>
+        <button type="button" data-tab="stake">Stake</button>
+        <button type="button" data-tab="loans">Borrow</button>
+        <button type="button" data-tab="pool">Pool</button>
+      </nav>
+      <p class="wallet-bits" id="wallet-bits" hidden>
+        <span>RAID <strong id="wallet-raid">-</strong></span>
+        <span>Raiders <strong id="wallet-nfts">-</strong></span>
+        <span>ETH <strong id="wallet-eth">-</strong></span>
+      </p>
+    </div>
   </div>
+
+  <main class="stage-root">
+  <div class="home wrap" data-view="home">
+    <figure class="hero" aria-hidden="true">
+      <div class="plate">
+        <img
+          id="teaser"
+          class="pixel"
+          fetchpriority="high"
+          src="art/01.png"
+          width="500"
+          height="500"
+          alt=""
+        />
+      </div>
+    </figure>
+
+    <div class="intro">
+      <ul class="facts card">
+        <li><span class="k">Supply</span><span class="v">5,000</span></li>
+        <li><span class="k">AMM pool</span><span class="v" id="fact-anvil">1,250</span></li>
+        <li><span class="k">Royalties</span><span class="v">10%</span></li>
+        <li><span class="k">Chain</span><span class="v">Robinhood</span></li>
+      </ul>
+      <div class="copy">
+        <section>
+          <p class="eyebrow">Collection</p>
+          <h2>5,000 CHAINRAIDERS</h2>
+          <p>
+            The set is minted out. Hand-drawn pixel raiders on Robinhood Chain.
+            Each one is DNA, head, body, face, and background.
+          </p>
+        </section>
+        <section>
+          <p class="eyebrow">Market</p>
+          <h2>Active AMM pool</h2>
+          <p>
+            You buy and sell against the vault. Shelf takes the oldest raider.
+            Snipe costs more. Soft stake and loans sit on the same desk.
+          </p>
+        </section>
+        <section>
+          <p class="eyebrow">Royalties</p>
+          <h2>All royalties point at RAID LP</h2>
+          <p>
+            OpenSea creator fees are 10%. That ETH buys RAID against the live
+            pool. The bid feeds RAID liquidity, not a treasury wallet.
+            It does not pay stakers.
+          </p>
+        </section>
+        <section>
+          <p class="eyebrow">Stake</p>
+          <h2>Soft stake shares Anvil fees</h2>
+          <p>
+            You activate a raider you already hold. It stays in your wallet.
+            You burn RAID for weight. Transfer voids the share.
+            You claim when you want.
+          </p>
+          <p><a href="app.html#stake">Activate on the market</a></p>
+        </section>
+      </div>
+    </div>
+
+    <figure class="flow card" aria-label="Where RAID goes on each desk move">
+      <p class="eyebrow">RAID flow</p>
+      <h2>Where the RAID goes</h2>
+      <p>
+        Each raider is 500,000 RAID. Swap, snipe, sell, and loan pay holders
+        over 30 days. Stake burns.
+      </p>
+      <div class="flow-chart">
+        <article class="flow-event flow-e1">
+          <p class="eyebrow">Swap</p>
+          <p class="flow-amt">50,000 RAID</p>
+          <p>Shelf buy. To holders.</p>
+        </article>
+        <article class="flow-event flow-e2">
+          <p class="eyebrow">Snipe</p>
+          <p class="flow-amt">75,000 RAID</p>
+          <p>Vault pick. To holders.</p>
+        </article>
+        <article class="flow-event flow-e3">
+          <p class="eyebrow">Sell</p>
+          <p class="flow-amt">50,000 RAID</p>
+          <p>To the vault. To holders.</p>
+        </article>
+        <article class="flow-event flow-e4">
+          <p class="eyebrow">Loan</p>
+          <p class="flow-amt">50,000 RAID</p>
+          <p>Year interest. To holders.</p>
+        </article>
+        <article class="flow-event is-burn flow-e5">
+          <p class="eyebrow">Stake</p>
+          <p class="flow-amt">50,000 RAID</p>
+          <p>Not to holders.</p>
+        </article>
+        <article class="flow-node is-core flow-vault">
+          <p class="eyebrow">Soft stake vault</p>
+          <p>Split by weight. Drips 30 days. Claim whenever you want.</p>
+        </article>
+        <article class="flow-node is-dead flow-dead">
+          <p class="eyebrow">Burned</p>
+          <p>95% gone. 5% Clutch.</p>
+        </article>
+      </div>
+    </figure>
+  </div>
+
+  <div class="shell wrap" data-view="market">
+    <section class="panel desk-panel is-on" data-panel="trade">
+      <div class="stage">
+        <article class="card art-card">
+          <div class="frame">
+            <img id="fifo-art" class="pixel" src="art/01.png" width="500" height="500" alt="Next raider on the shelf" />
+          </div>
+          <div class="art-meta">
+            <p class="eyebrow">Next on the shelf</p>
+            <h2 id="fifo-id">#-</h2>
+            <p id="fifo-note">Loading vault inventory.</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="desk">
+        <article class="card desk-card">
+          <p class="eyebrow">On the shelf</p>
+          <p class="price" id="stat-random">-</p>
+          <p class="hint">You get the oldest raider in the vault. 10% of RAID goes to stakers, plus the protocol ETH fee.</p>
+          <button type="button" class="btn btn-primary wide" data-write id="buy-random">Buy from the shelf</button>
+
+          <dl class="quotes">
+            <div><dt>In vault</dt><dd id="stat-inv">-</dd></div>
+            <div><dt>Next out</dt><dd id="stat-next">-</dd></div>
+            <div><dt>Sell payout</dt><dd id="stat-sell">-</dd></div>
+            <div><dt>ETH fee</dt><dd id="stat-fee">-</dd></div>
+          </dl>
+
+          <label class="field" for="sell-ids">
+            Sell into vault
+            <span>
+              <input id="sell-ids" type="text" placeholder="12, 40-44" />
+              <button type="button" class="btn-ghost" data-write id="sell">Sell raiders</button>
+            </span>
+          </label>
+          <div class="held" data-held="sell-ids" hidden>
+            <p class="eyebrow">Your raiders</p>
+            <div class="held-list"></div>
+          </div>
+        </article>
+      </aside>
+    </section>
+
+    <section class="panel desk-panel" data-panel="snipe">
+      <div class="stage">
+        <article class="card art-card">
+          <div class="frame">
+            <img id="snipe-art" class="pixel" src="art/01.png" width="500" height="500" alt="Snipe preview" />
+          </div>
+          <div class="art-meta">
+            <p class="eyebrow">Pick from the vault</p>
+            <h2 id="snipe-heading">#-</h2>
+            <p id="snipe-note">Click a raider in the vault, or enter a token ID.</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="desk">
+        <article class="card desk-card">
+          <p class="eyebrow">Snipe</p>
+          <p class="price" id="stat-snipe">-</p>
+          <p class="hint">15% extra RAID versus a shelf buy, plus the protocol ETH fee. Only works if that raider is in the vault.</p>
+          <label class="field" for="snipe-id">
+            Token ID
+            <span>
+              <input id="snipe-id" type="number" min="1" placeholder="Token ID" />
+              <button type="button" class="btn-ghost" id="snipe-check">Check vault</button>
+            </span>
+          </label>
+          <button type="button" class="btn btn-primary wide" data-write id="buy-specific">Buy this raider</button>
+          <dl class="quotes">
+            <div><dt>Availability</dt><dd id="snipe-avail">Pick a raider</dd></div>
+            <div><dt>Snipe fee</dt><dd id="snipe-fee">-</dd></div>
+          </dl>
+          <div class="snipe-shelf">
+            <p class="eyebrow">In the vault</p>
+            <p class="hint tight" id="snipe-count">Click a raider to snipe it.</p>
+            <div class="snipe-grid" id="snipe-grid"></div>
+            <div class="snipe-pager">
+              <button type="button" class="btn-ghost" id="snipe-prev">Previous</button>
+              <p id="snipe-range">Loading</p>
+              <button type="button" class="btn-ghost" id="snipe-next">Next</button>
+            </div>
+          </div>
+        </article>
+      </aside>
+    </section>
+
+    <section class="panel split-panel" data-panel="stake">
+      <article class="card desk-card">
+        <p class="eyebrow">Soft stake</p>
+        <h2>Activate a raider you hold</h2>
+        <p>
+          NFTs stay in your wallet. You burn RAID for a claim on swap fees.
+          Transfer voids the activation. 95% of the burn is dead. 5% goes to Clutch.
+        </p>
+        <p class="hint tight">Pool weight now <strong id="stake-weight">-</strong>.</p>
+        <ul class="tiers" id="tiers"></ul>
+        <label class="field" for="act-id">
+          Activate
+          <span>
+            <input id="act-id" type="number" min="1" placeholder="Token ID" />
+            <select id="act-tier" aria-label="Stake tier"></select>
+            <button type="button" class="btn btn-primary" data-write id="activate">Activate</button>
+          </span>
+        </label>
+        <div class="held" data-held="act-id" hidden>
+          <p class="eyebrow">Your raiders</p>
+          <div class="held-list"></div>
+        </div>
+        <p class="price subprice" id="stake-cost">-</p>
+      </article>
+
+      <article class="card desk-card">
+        <p class="eyebrow">Rewards</p>
+        <h2>Claim or kick</h2>
+        <p>Claim any time. Kick voids a stale activation after the NFT moved.</p>
+        <label class="field" for="stake-lookup-id">
+          Lookup
+          <span>
+            <input id="stake-lookup-id" type="number" min="1" placeholder="Token ID" />
+            <button type="button" class="btn-ghost" id="stake-lookup">Check stake</button>
+          </span>
+        </label>
+        <dl class="quotes">
+          <div><dt>Status</dt><dd id="stake-status">-</dd></div>
+          <div><dt>Owner</dt><dd id="stake-owner">-</dd></div>
+          <div><dt>Tier</dt><dd id="stake-tier">-</dd></div>
+          <div><dt>Pending RAID</dt><dd id="stake-pending">-</dd></div>
+        </dl>
+        <label class="field" for="claim-ids">
+          Claim
+          <span>
+            <input id="claim-ids" type="text" placeholder="12, 40-44" />
+            <button type="button" class="btn-ghost" data-write id="claim">Claim rewards</button>
+          </span>
+        </label>
+        <div class="held" data-held="claim-ids" hidden>
+          <p class="eyebrow">Your raiders</p>
+          <div class="held-list"></div>
+        </div>
+        <label class="field" for="kick-id">
+          Kick
+          <span>
+            <input id="kick-id" type="number" min="1" placeholder="Token ID" />
+            <button type="button" class="btn-ghost" data-write id="kick">Kick activation</button>
+          </span>
+        </label>
+      </article>
+    </section>
+
+    <section class="panel split-panel" data-panel="loans">
+      <article class="card desk-card">
+        <p class="eyebrow">Borrow</p>
+        <h2>Lock a raider for 365 days</h2>
+        <p>
+          The NFT moves into the loan vault. You receive RAID minus a year of prepaid interest.
+          Repay principal only. After maturity plus 7 days, anyone can liquidate.
+        </p>
+        <p class="price" id="loan-net">-</p>
+        <p class="hint">Plus the protocol ETH creation fee. Interest streams to stakers.</p>
+        <dl class="quotes">
+          <div><dt>Principal</dt><dd id="loan-principal">-</dd></div>
+          <div><dt>Prepaid interest</dt><dd id="loan-interest">-</dd></div>
+          <div><dt>Borrow APY</dt><dd id="loan-apy">-</dd></div>
+          <div><dt>ETH fee</dt><dd id="loan-fee">-</dd></div>
+        </dl>
+        <label class="field" for="borrow-id">
+          Borrow
+          <span>
+            <input id="borrow-id" type="number" min="1" placeholder="Token ID" />
+            <button type="button" class="btn btn-primary" data-write id="borrow">Open 365-day loan</button>
+          </span>
+        </label>
+        <div class="held" data-held="borrow-id" hidden>
+          <p class="eyebrow">Your raiders</p>
+          <div class="held-list"></div>
+        </div>
+      </article>
+
+      <article class="card desk-card">
+        <p class="eyebrow">Manage</p>
+        <h2>Repay or liquidate</h2>
+        <p>Your open loan ID fills in after you connect. Liquidation pays a 2% incentive after grace.</p>
+        <label class="field" for="loan-id">
+          Loan ID
+          <span>
+            <input id="loan-id" type="number" min="1" placeholder="Loan ID" />
+            <button type="button" class="btn-ghost" id="loan-lookup">Check loan</button>
+          </span>
+        </label>
+        <dl class="quotes">
+          <div><dt>Status</dt><dd id="loan-status">-</dd></div>
+          <div><dt>Collateral</dt><dd id="loan-token">-</dd></div>
+          <div><dt>Borrower</dt><dd id="loan-borrower">-</dd></div>
+          <div><dt>Matures</dt><dd id="loan-maturity">-</dd></div>
+        </dl>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" data-write id="repay">Repay principal</button>
+          <button type="button" class="btn-ghost" data-write id="liquidate">Liquidate loan</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel split-panel" data-panel="pool">
+      <article class="card desk-card">
+        <p class="eyebrow">Pool</p>
+        <h2>RAID market inventory</h2>
+        <p>
+          Shelf buys take the oldest raider in the vault. Snipe costs more and pulls that token if it is in there.
+          This page wraps the live RAID market, not the old RDR vault.
+        </p>
+        <dl class="quotes">
+          <div><dt>Inventory</dt><dd id="pool-inv">-</dd></div>
+          <div><dt>Next out</dt><dd id="pool-next">-</dd></div>
+          <div><dt>RAID / NFT</dt><dd id="pool-tpn">-</dd></div>
+          <div><dt>Shelf fee</dt><dd id="pool-random-bps">-</dd></div>
+          <div><dt>Snipe fee</dt><dd id="pool-specific-bps">-</dd></div>
+          <div><dt>Protocol fee</dt><dd>0.5%</dd></div>
+          <div><dt>Shelf buy</dt><dd id="pool-random">-</dd></div>
+          <div><dt>Sell payout</dt><dd id="pool-sell">-</dd></div>
+          <div><dt>Stake weight</dt><dd id="pool-weight">-</dd></div>
+          <div><dt>Borrow APY</dt><dd id="pool-apy">-</dd></div>
+        </dl>
+      </article>
+
+      <article class="card desk-card">
+        <p class="eyebrow">Contracts</p>
+        <h2>On-chain market set</h2>
+        <p>Robinhood Chain 4663. Writes go through these addresses.</p>
+        <p class="ext-links">
+          <a id="anvil-ext" href="#" target="_blank" rel="noopener noreferrer">Clutch Anvil</a>
+          <a id="vault-link" href="#" target="_blank" rel="noopener noreferrer">Vault</a>
+          <a id="raid-link" href="#" target="_blank" rel="noopener noreferrer">RAID</a>
+          <a id="nft-link" href="#" target="_blank" rel="noopener noreferrer">NFT</a>
+          <a id="stake-link" href="#" target="_blank" rel="noopener noreferrer">Stake</a>
+          <a id="loan-link" href="#" target="_blank" rel="noopener noreferrer">Loan</a>
+          <a id="escrow-link" href="#" target="_blank" rel="noopener noreferrer">Escrow</a>
+          <a id="router-link" href="#" target="_blank" rel="noopener noreferrer">Router</a>
+          <a id="factory-link" href="#" target="_blank" rel="noopener noreferrer">Factory</a>
+        </p>
+      </article>
+    </section>
+
+    <section class="history card" id="history">
+      <div class="history-head">
+        <div>
+          <h2>Recent on-chain activity</h2>
+          <p class="status" id="log">Connect on Robinhood Chain (4663) to trade.</p>
+        </div>
+        <div class="history-tools">
+          <a class="history-ext" id="history-ext" href="#" target="_blank" rel="noopener noreferrer">View on Blockscout</a>
+          <button type="button" class="btn-ghost" id="history-more" aria-expanded="false">Show more</button>
+        </div>
+      </div>
+      <div class="history-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>When</th>
+              <th>Date</th>
+              <th>Raider</th>
+              <th>Event</th>
+              <th>Details</th>
+              <th>Market</th>
+              <th>Block</th>
+              <th>Tx</th>
+            </tr>
+          </thead>
+          <tbody id="history-rows">
+            <tr><td colspan="8">Loading vault history.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="history-pager" id="history-pager" hidden>
+        <button type="button" class="btn-ghost" id="history-prev">Previous</button>
+        <p id="history-range">Page 1</p>
+        <button type="button" class="btn-ghost" id="history-next">Next</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="layout" data-view="gallery">
+    <aside class="sidebar">
+      <div class="side-head">
+        <h2>Filters</h2>
+        <input type="search" id="tsearch" placeholder="Search" autocomplete="off" />
+        <button type="button" class="btn-ghost" id="clear">Clear filters</button>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="where" id="where" role="radiogroup" aria-label="Availability"></div>
+      <div class="sort">
+        <label for="sort">Order</label>
+        <select id="sort">
+          <option value="id">Token ID</option>
+          <option value="price-asc">Listed price, lowest</option>
+          <option value="price-desc">Listed price, highest</option>
+          <option value="rarity-desc">Rarity, highest</option>
+          <option value="rarity-asc">Rarity, lowest</option>
+        </select>
+      </div>
+      <div id="layers"></div>
+    </aside>
+    <div class="main" id="main">
+      <div class="grid" id="grid"></div>
+    </div>
+    <aside class="buy-desk" id="buy-desk" hidden>
+      <article class="desk-card">
+        <p class="eyebrow" id="buy-eyebrow">Raider</p>
+        <h2 id="buy-heading">Pick a raider</h2>
+        <p class="price" id="buy-price">-</p>
+        <p class="hint" id="buy-note">Click a raider to see the vault quote and OpenSea listing.</p>
+        <div class="desk-actions">
+          <button type="button" class="btn btn-primary wide" id="buy-snipe" hidden>Buy this raider</button>
+          <a class="btn-ghost wide" id="buy-os" href="https://opensea.io/collection/chainraiders" target="_blank" rel="noopener noreferrer" hidden>
+            <span class="os-mark" aria-hidden="true"></span>
+            View listing
+          </a>
+        </div>
+        <dl class="quotes">
+          <div><dt>Availability</dt><dd id="buy-avail">Pick a raider</dd></div>
+          <div><dt>OpenSea</dt><dd id="buy-os-price">-</dd></div>
+          <div><dt>Snipe fee</dt><dd id="buy-fee">-</dd></div>
+          <div><dt>ETH fee</dt><dd id="buy-eth">-</dd></div>
+          <div><dt>Your RAID</dt><dd id="buy-raid">-</dd></div>
+        </dl>
+        <p class="buy-log" id="buy-log"></p>
+      </article>
+    </aside>
+  </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© CHAINRAIDERS</p>
+      <p>Robinhood Chain</p>
+    </div>
+  </footer>
   <script src="app.js"></script>
+  <script type="module" src="js/boot.js"></script>
 </body>
 </html>

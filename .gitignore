@@ -2,4 +2,9 @@
 Thumbs.db
 Desktop.ini
 *.log
-raiders.json
+_shots/
+.env
+contracts/.env
+contracts/cache/
+contracts/out/
+contracts/broadcast/

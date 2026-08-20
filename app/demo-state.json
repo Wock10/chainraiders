@@ -1,0 +1,192 @@
+{
+  "live": false,
+  "note": "Cached Anvil snapshot. Connect a wallet on Robinhood Chain if the public RPC is blocked.",
+  "totalCost": "552500000000000000000000",
+  "baseCost": "500000000000000000000000",
+  "fee": "50000000000000000000000",
+  "protocolFee": "2500000000000000000000",
+  "netPayout": "447500000000000000000000",
+  "grossPayout": "500000000000000000000000",
+  "sellFee": "50000000000000000000000",
+  "sellProtocol": "2500000000000000000000",
+  "inventorySize": 1241,
+  "nextTokenId": 29,
+  "tokensPerNFT": "500000000000000000000000",
+  "randomBps": 1000,
+  "specificBps": 1500,
+  "feeWei": "961000000000000",
+  "totalWeight": "0",
+  "borrowApy": 1000,
+  "loanFeeWei": "961000000000000",
+  "minDuration": 31536000,
+  "maxDuration": 31536000,
+  "gracePeriod": 604800,
+  "liqIncentive": 200,
+  "tiers": [
+    {
+      "id": 0,
+      "name": "Base",
+      "weight": "1.00x",
+      "bps": 1000,
+      "raid": "50000000000000000000000"
+    },
+    {
+      "id": 1,
+      "name": "T1",
+      "weight": "1.25x",
+      "bps": 2200,
+      "raid": "110000000000000000000000"
+    },
+    {
+      "id": 2,
+      "name": "T2",
+      "weight": "1.60x",
+      "bps": 4500,
+      "raid": "225000000000000000000000"
+    },
+    {
+      "id": 3,
+      "name": "T3",
+      "weight": "2.00x",
+      "bps": 9000,
+      "raid": "450000000000000000000000"
+    },
+    {
+      "id": 4,
+      "name": "T4",
+      "weight": "3.33x",
+      "bps": 24000,
+      "raid": "1200000000000000000000000"
+    }
+  ],
+  "history": [
+    {
+      "side": "Sell",
+      "tokenId": 3300,
+      "raid": "447500000000000000000000",
+      "wallet": "0x31AEf2eb10C4361a37827a151890d31F722E2038",
+      "hash": "0x402ca371449c4fd2d31007c0bdd59b89e81758903950b1d49688df467a415b4d",
+      "time": "2026-08-20T01:04:48.000000Z"
+    },
+    {
+      "side": "Buy",
+      "tokenId": 33,
+      "raid": "552500000000000000000000",
+      "wallet": "0xE8bE5f77AB668943f0e01Cc7870993088f0b9eC4",
+      "hash": "0xc2ca578529df6adc44c7d2ffe4301348db9c6e6cfb31cf351cb3af271e4fff70",
+      "time": "2026-08-19T23:48:24.000000Z"
+    },
+    {
+      "side": "Buy",
+      "tokenId": 35,
+      "raid": "552500000000000000000000",
+      "wallet": "0x13eE642aC134e69e4cb9F279511895380d0d404d",
+      "hash": "0x04a030f2031ca55306d0a8f2f76329df6f45e385faf9b35d4abf85dd13f7f327",
+      "time": "2026-08-19T23:48:07.000000Z"
+    },
+    {
+      "side": "Buy",
+      "tokenId": 29,
+      "raid": "552500000000000000000000",
+      "wallet": "0x13eE642aC134e69e4cb9F279511895380d0d404d",
+      "hash": "0x9b09fcf03913dbcd25ff81aa72efcd08f88d875d7dacaa5ab0a913001d0fc405",
+      "time": "2026-08-19T23:47:38.000000Z"
+    },
+    {
+      "side": "Snipe",
+      "tokenId": 1512,
+      "raid": "577500000000000000000000",
+      "wallet": "0x744F7102f2e8E82d5c61004f2Fb5DBD2ca5F1d82",
+      "hash": "0xf07627df00bbde1d54cf4deaa5f8114b19a4ad6b809ae4488f0dd95707b769ca",
+      "time": "2026-08-19T23:32:03.000000Z"
+    },
+    {
+      "side": "Snipe",
+      "tokenId": 534,
+      "raid": "577500000000000000000000",
+      "wallet": "0xef5691ec9b7A367D4dBDa1a4aF27DAd5F1C0f755",
+      "hash": "0xecd7239ce654d4bc74e2801d342a782e68f5fc39abf82c803d75bcf1468807af",
+      "time": "2026-08-19T16:02:57.000000Z"
+    },
+    {
+      "side": "Buy",
+      "tokenId": 28,
+      "raid": "552500000000000000000000",
+      "wallet": "0x2B5D6b9b94d3D38DAda1aF420bA4Bcc110926508",
+      "hash": "0xfbbc3eddbb3c07c63a5e0c46ddbc6719b590aff872adb31748a18a40513a4992",
+      "time": "2026-08-19T10:50:41.000000Z"
+    },
+    {
+      "side": "Buy",
+      "tokenId": 26,
+      "raid": "552500000000000000000000",
+      "wallet": "0x73F5A375dEB49e28bb4237c6e172bb2d80dA043d",
+      "hash": "0x0a8e0f6c340da7c3bd875c811df8e0dd3f9c00ba51bf381b51539eab528f0d81",
+      "time": "2026-08-19T09:23:29.000000Z"
+    },
+    {
+      "side": "Buy",
+      "tokenId": 25,
+      "raid": "552500000000000000000000",
+      "wallet": "0x73F5A375dEB49e28bb4237c6e172bb2d80dA043d",
+      "hash": "0x51f0c99372b6107a247283fa2ea9509e6f5d554a27b763f0e7636d058173bcb7",
+      "time": "2026-08-19T09:23:07.000000Z"
+    },
+    {
+      "side": "Snipe",
+      "tokenId": 866,
+      "raid": "577500000000000000000000",
+      "wallet": "0xD215Fb430A0711A56BB5044ff81ce452923BfB3D",
+      "hash": "0x254433a279505dec0b8f08e5dc5f6cb6014df8e4f9263f12adc0292e1517bb52",
+      "time": "2026-08-19T06:11:05.000000Z"
+    },
+    {
+      "side": "Snipe",
+      "tokenId": 304,
+      "raid": "577500000000000000000000",
+      "wallet": "0x8BFa6B5d35302aC042556c679b0c0bB5fAf63dea",
+      "hash": "0x6f2b0e55878d9b64fc95c6573671a8fea45cdab28fdf00558071cb8be1ab82fa",
+      "time": "2026-08-19T06:00:47.000000Z"
+    },
+    {
+      "side": "Snipe",
+      "tokenId": 1437,
+      "raid": "577500000000000000000000",
+      "wallet": "0xD215Fb430A0711A56BB5044ff81ce452923BfB3D",
+      "hash": "0x70a66a064097e29f1b40b482479443926d422eaf8d9c95195c68680437e57ca9",
+      "time": "2026-08-19T04:29:52.000000Z"
+    },
+    {
+      "side": "Snipe",
+      "tokenId": 604,
+      "raid": "577500000000000000000000",
+      "wallet": "0xD215Fb430A0711A56BB5044ff81ce452923BfB3D",
+      "hash": "0x2c94ab6b6371462d73b72266ff8d1b75495fb2231c70f3ef239aed0f628854ef",
+      "time": "2026-08-19T03:50:51.000000Z"
+    },
+    {
+      "side": "Sell",
+      "tokenId": 1520,
+      "raid": "447500000000000000000000",
+      "wallet": "0xef5691ec9b7A367D4dBDa1a4aF27DAd5F1C0f755",
+      "hash": "0x11ddc5ea298d2bd71bf3d09c2a134e85a77a684b655fc42a3d3166ef0372e77f",
+      "time": "2026-08-19T03:42:16.000000Z"
+    },
+    {
+      "side": "Sell",
+      "tokenId": 2387,
+      "raid": "447500000000000000000000",
+      "wallet": "0xef5691ec9b7A367D4dBDa1a4aF27DAd5F1C0f755",
+      "hash": "0xff99b8a4eb52f7c9fd4506786c7fe5eaf3f92ed61e86a4c7b712fb0783eb4347",
+      "time": "2026-08-19T03:41:43.000000Z"
+    },
+    {
+      "side": "Sell",
+      "tokenId": 2406,
+      "raid": "447500000000000000000000",
+      "wallet": "0xef5691ec9b7A367D4dBDa1a4aF27DAd5F1C0f755",
+      "hash": "0xd135d9ba1e0603d968ac46f5ed4cc830fac89dd44e897f040b3dfe33adfc2047",
+      "time": "2026-08-19T03:41:10.000000Z"
+    }
+  ]
+}
